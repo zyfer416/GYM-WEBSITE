@@ -1,2 +1,2 @@
 # GITHUB-TUTORIAL
-Name - Ayush Chandra
+Name - Ayush Chandr
