@@ -1,2 +1,2 @@
-# GITHUB-TUTORIAL
-Name - Ayush Chandra
+# GYM Website
+
