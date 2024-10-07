@@ -383,7 +383,7 @@ span{
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    color:#fff
+    color:#fff;
     transition: 0.5s ease-in-out;
 }
 
