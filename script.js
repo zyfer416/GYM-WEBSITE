@@ -18,3 +18,12 @@ const typed = new Typed('.multiple-text',  {
     backDelay: 1000,
     loop: true,
  });
+
+ 
+ 
+ const themeToggle = document.getElementById('theme-toggle');
+
+ themeToggle.addEventListener('change', () => {
+     document.body.classList.toggle('light-mode');
+ });
+ 
