@@ -22,7 +22,7 @@
      --light-second-bg-color: #f0f0f0;
      --light-text-color: #000;
      --light-main-color: #008000;
- }
+}
  
  /* Light mode overrides */
  .light-mode {
@@ -330,6 +330,9 @@ span {
     border-bottom: 2px solid #5d6c83;
     transition: all 0.5s ease;
 }
+.box ul li:hover{
+    color: #20d408;
+}
 
 .box i {
     vertical-align: middle;
@@ -340,6 +343,7 @@ span {
 
 .box a:hover {
     border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
 }
 
 .box:hover {
@@ -388,17 +392,23 @@ span {
     gap: 1.5rem;
     color: #fff;
     transition: 0.4s ease-in-out;
+    border-color: #20d408;
+    
 }
+
+
 .review-item:hover{
     border: 3px solid var(--main-color);
     transform: translateY(-5px) scale(1.03);
 }
 .review-item h2{
     font-size: 2.8rem;
+    color: aqua;
 }
 .review-item p{
     font-size: 1.5rem;
     line-height: 1.3;
+    color: var(--main-color);
 }
 #star{
     color: gold;
@@ -659,4 +669,9 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+
+.comments{
+    transition: background-color 0.5s, color 0.5s;
 }
