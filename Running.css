@@ -1,0 +1,198 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    /* Dark Mode Variables */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: white;
+
+    /* Light Mode Variables */
+    --light-bg-color: #ffffff;
+    --light-text-color: #000000;
+    --light-accent-color: #008000;
+}
+
+title{
+    background-color: #008000;
+}
+
+/* Light mode overrides */
+body.light-mode {
+    --bg-color: var(--light-bg-color);
+    --text-color: var(--light-text-color);
+    --accent-color: var(--light-accent-color);
+}
+
+/* Body and General Typography */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+}
+
+h1, h2 {
+    color: var(--accent-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    list-style: disc;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Header Section */
+header {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 1rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    color: #008000;
+    font-size: 3rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* header:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-color: #008000;
+} */
+
+/* Section Styling */
+section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--light-accent-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--accent-color);
+    border-color: #008000;
+} */
+
+section h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: #008000;
+}
+
+section ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    color:#008000;
+
+}
+
+section ul li {
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+section ul li:hover {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+footer p {
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Button-Like Hover for Links or Action Items */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
