@@ -1,0 +1,87 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Card styling */
+.card {
+    background-color: #1e1e1e;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Card heading */
+.card h2 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Card price */
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    margin: 10px 0;
+}
+
+/* List styling */
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.card ul li {
+    margin: 5px 0;
+}
+
+/* Join button styling */
+.card button {
+    background-color: transparent;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.card button:hover {
+    background-color: #00ff00;
+    color: black;
+    transition: 0.3s;
+}
+
+/* Buy now link styling */
+.buy-now {
+    display: none; /* Hidden by default */
+    margin-top: 10px;
+}
+
+.buy-now a {
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buy-now a:hover {
+    text-decoration: underline;
+}
