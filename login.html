@@ -16,7 +16,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #333333, #4a4a4a);
-            color: #fff;
+            color: #006d22;
         }
 
         .login-container {
@@ -24,14 +24,14 @@
             border-radius: 12px;
             padding: 30px;
             width: 350px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 253, 101, 0.3);
             text-align: center;
         }
 
         .login-container h2 {
             margin-bottom: 20px;
             font-size: 24px;
-            color: #ff6f61;
+            color: #00fc47;
         }
 
         .login-container form {
@@ -54,13 +54,13 @@
 
         .form-group input:focus {
             outline: none;
-            border-color: #ff6f61;
+            border-color: #33fd01;
         }
 
         .btn {
             padding: 10px;
-            background: #ff6f61;
-            color: #fff;
+            background: #157400;
+            color: #000000;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -68,7 +68,7 @@
         }
 
         .btn:hover {
-            background: #e25d54;
+            background: #00ff1a;
         }
 
         .social-login a {
@@ -112,7 +112,7 @@
             const password = document.getElementById('password').value;
 
             // Simple check for demonstration (replace with actual validation logic)
-            if (username === "user" && password === "password") {
+            if (username === "user@gmail.com" && password === "password") {
                 alert("Login Successful!");
                 window.location.href = "index.html"; // Redirect to the main site
             } else {
