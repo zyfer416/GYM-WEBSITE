@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
@@ -11,6 +14,30 @@
 </head>
 
 <body>
+    <!-- ChatBot -->
+    <button class="chatbot-circle"></button>
+    <div class="chatbot-box">
+        <div class="title">
+            <p>May I Help You?</p>
+            <i class="fa-solid fa-xmark close"></i>
+        </div>
+        <div class="chatbox">
+            <div class="message-box bot">
+                <div class="message-bot">
+                    <p>Welcome to Royal Fitness! We're here to help you reach your fitness goals. How can we assist you today? 😊</p>
+                </div>
+            </div>
+        </div>
+        <div class="suggestions">
+                <p class="suggestion" data-message="I'm looking to join the gym.">I'm looking to join the gym.</p>
+                <p class="suggestion" data-message="Tell me about the monthly plan.">Tell me about the monthly plan.</p>
+                <p class="suggestion" data-message="Tell me about yoga classes.">Tell me about yoga classes.</p>
+        </div>
+        <div class="textarea">
+            <input type="text" placeholder="Type a message" id="user-input">
+            <button class="send-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
     <!-- Header Section -->
 
     <header>
