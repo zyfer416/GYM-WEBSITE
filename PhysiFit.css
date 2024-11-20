@@ -1,25 +1,21 @@
-/* General Styles */
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 :root {
     /* Dark Mode Variables */
-    --bg-color: #000000;
-    --text-color: #ffffff;
-    --accent-color: white;
+    --bg-color: #1c1c1c;
+    --text-color: #eaeaea;
+    --accent-color: #ff5733;
 
     /* Light Mode Variables */
     --light-bg-color: #ffffff;
-    --light-text-color: #000000;
-    --light-accent-color: #008000;
-}
-
-title{
-    background-color: #008000;
+    --light-text-color: #1c1c1c;
+    --light-accent-color: #007bff;
 }
 
 /* Light mode overrides */
@@ -34,101 +30,101 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    margin: 0;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
-h1, h2 {
+/* Headings */
+h1, h2, h3 {
     color: var(--accent-color);
 }
 
 h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 2rem;
+    font-size: 2.8rem;
+text-align: center;
+margin: 2rem 0; /* Already correct */
+text-transform: uppercase;
+letter-spacing: 2px;
+background: linear-gradient(90deg, var(--accent-color), #1e0601);
+-webkit-background-clip: text; /* Ensures WebKit compatibility */
+background-clip: text; /* Added for standard support */
+-webkit-text-fill-color: transparent; /* Ensures text gradient visibility */
+
 }
 
 h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-transform: capitalize;
 }
 
-p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-ul {
-    margin-left: 1.5rem;
-    list-style: disc;
-}
-
-ul li {
+h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    text-transform: capitalize;
 }
 
 /* Header Section */
 header {
-    background: var(--accent-color);
+    background: linear-gradient(90deg, var(--accent-color), #e7d9d7);
     color: var(--bg-color);
     text-align: center;
-    padding: 2rem 1rem;
-    transition: background-color 0.3s ease;
+    padding: 2.5rem 1rem;
+    border-bottom: 5px solid var(--bg-color);
 }
 
 header h1 {
-    color: #008000;
     font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-top: 0.5rem;
+    opacity: 0.8;
 }
-
-/* header:hover {
-    background-color: var(--bg-color);
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    border-color: #008000;
-} */
 
 /* Section Styling */
 section {
-    padding: 2rem 1rem;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
     background-color: var(--bg-color);
-    color: var(--light-accent-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-/* section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--accent-color);
-    border-color: #008000;
-} */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
 
 section h2 {
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.8rem;
-    color: #008000;
+    color: var(--accent-color);
 }
 
 section ul {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     padding-left: 1.5rem;
-    color:#008000;
-
 }
 
 section ul li {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
     position: relative;
-    transition: color 0.3s ease;
+    padding-left: 1.5rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+section ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
 }
 
 section ul li:hover {
@@ -136,46 +132,45 @@ section ul li:hover {
     font-weight: bold;
 }
 
-/* Footer Styling */
+/* Buttons */
+button, a.button {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover, a.button:hover {
+    background-color: #ff7961;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     background: var(--accent-color);
     color: var(--bg-color);
     margin-top: 2rem;
-    transition: background-color 0.3s ease;
-}
-
-footer:hover {
-    background-color: var(--bg-color);
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
 }
 
 footer p {
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 footer p:hover {
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-/* Button-Like Hover for Links or Action Items */
-a {
-    text-decoration: none;
-    color: var(--accent-color);
-    font-weight: bold;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-a:hover {
-    color: var(--bg-color);
-    background-color: var(--accent-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
 }
 
 /* Responsive Design */
@@ -184,7 +179,7 @@ a:hover {
         font-size: 14px;
     }
 
-    header h1 {
+    h1 {
         font-size: 2.5rem;
     }
 
@@ -192,7 +187,8 @@ a:hover {
         font-size: 1rem;
     }
 
-    h2 {
-        font-size: 1.5rem;
+    section ul li {
+        font-size: 1rem;
     }
 }
+
