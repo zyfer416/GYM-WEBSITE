@@ -219,25 +219,31 @@ span {
 }
 
 .row {
+    margin-left: 200px;
+    margin-right: 200px;
     background: var(--bg-color);
     border-radius: 28px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
     padding: 20px;
     transition: all 0.5s ease;
+    height: 600px;
+    
 }
+
 
 .row img {
     height: auto;
     width: 100%;
     border-radius: 28px;
     margin-bottom: 1.4rem;
+    height: 500px;
 }
 
 .row h4 {
     font-size: 25px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     line-height: 1.4;
     color:#008000;
 }
