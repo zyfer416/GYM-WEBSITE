@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        /* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    /* Dark Mode Variables */
+    --bg-color: #1c1c1c;
+    --text-color: #eaeaea;
+    --accent-color: #00ff00; /* Base green */
+    --hover-color: #33ff33; /* Lighter green */
+    --focus-color: #009900; /* Darker green */
+    --shadow-color: rgba(0, 255, 0, 0.5); /* Glow effect for green */
+
+    /* Light Mode Variables */
+    --light-bg-color: #ffffff;
+    --light-text-color: #1c1c1c;
+    --light-accent-color: #00ff00;
+    --light-hover-color: #33ff33;
+    --light-focus-color: #009900;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-color: var(--light-bg-color);
+    --text-color: var(--light-text-color);
+    --accent-color: var(--light-accent-color);
+    --hover-color: var(--light-hover-color);
+    --focus-color: var(--light-focus-color);
+}
+
+/* Body Styling */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color);
+}
+
+.container:hover {
+    box-shadow: 0 10px 25px var(--shadow-color);
+    border-color: var(--hover-color);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
+    background: linear-gradient(90deg, var(--accent-color), var(--hover-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--shadow-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    color: var(--accent-color);
+    transition: all 0.3s ease-in-out;
+}
+
+h3:hover {
+    color: var(--hover-color);
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px var(--hover-color);
+}
+
+/* Form Styling */
+form {
+    margin-top: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+label:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: var(--focus-color);
+    outline: none;
+    box-shadow: 0 0 8px var(--focus-color);
+}
+
+input:hover {
+    transform: translateY(-3px);
+    border-color: var(--hover-color);
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+button:active {
+    background-color: var(--focus-color);
+    transform: scale(0.98);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+button:hover::after {
+    opacity: 0;
+}
+
+/* Result Styling */
+.result {
+    margin-top: 1.5rem;
+    padding: 15px;
+    background: var(--bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.result:hover {
+    transform: scale(1.05);
+    border-color: var(--hover-color);
+    box-shadow: 0 3px 15px var(--shadow-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+footer:hover {
+    transform: translateY(-5px) rotate(-2deg);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+footer p {
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+footer p:hover {
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmiForm">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter your height" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <div id="result" class="result" style="display: none;"></div>
+        <div id="categoryInfo" class="category" style="display: none;"></div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById("weight").value);
+            const height = parseFloat(document.getElementById("height").value) / 100; // Convert cm to meters
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                alert("Please enter valid weight and height values!");
+                return;
+            }
+
+            const bmi = (weight / (height * height)).toFixed(2);
+
+            let category = '';
+            let advice = '';
+
+            if (bmi < 18.5) {
+                category = "Underweight";
+                advice = "You are below the normal weight range. Consider consulting a nutritionist to improve your diet and achieve a healthy weight.";
+            } else if (bmi < 24.9) {
+                category = "Normal weight";
+                advice = "You are within the normal weight range. Keep up with a balanced diet and regular physical activity to maintain your health.";
+            } else if (bmi < 29.9) {
+                category = "Overweight";
+                advice = "You are above the normal weight range. It's important to adopt a healthier lifestyle with balanced meals and increased physical activity.";
+            } else {
+                category = "Obese";
+                advice = "Your weight is significantly above the normal range. Please consult a healthcare professional for personalized advice and support.";
+            }
+
+            const resultDiv = document.getElementById("result");
+            const categoryInfoDiv = document.getElementById("categoryInfo");
+
+            resultDiv.style.display = "block";
+            resultDiv.textContent = `Your BMI is ${bmi}. Category: ${category}`;
+
+            categoryInfoDiv.style.display = "block";
+            categoryInfoDiv.innerHTML = `
+                <h3>Category: ${category}</h3>
+                <p>${advice}</p>
+                <p><strong>BMI Ranges:</strong></p>
+                <ul>
+                    <li>Underweight: BMI < 18.5</li>
+                    <li>Normal weight: BMI 18.5 - 24.9</li>
+                    <li>Overweight: BMI 25 - 29.9</li>
+                    <li>Obese: BMI ≥ 30</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>
