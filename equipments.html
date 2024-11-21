@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Equipment</title>
+  <style>
+    /* Reset and Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #1c1c1c;
+      color: #eaeaea;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ff00;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #a8a8a8;
+    }
+
+    .equipment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .equipment {
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .equipment:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 255, 0, 0.5);
+    }
+
+    .equipment img {
+      width: 100%;
+      max-width: 200px;
+      margin: 10px auto;
+      border-radius: 8px;
+    }
+
+    .equipment h2 {
+      font-size: 1.5rem;
+      color: #00ff00;
+      margin: 10px 0;
+    }
+
+    .equipment p {
+      font-size: 1rem;
+      color: #a8a8a8;
+      margin-bottom: 15px;
+    }
+
+    .equipment a {
+      text-decoration: none;
+      color: #00ff00;
+      font-weight: bold;
+      border: 1px solid #00ff00;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .equipment a:hover {
+      background: #00ff00;
+      color: #1c1c1c;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #a8a8a8;
+      font-size: 1rem;
+    }
+
+    footer p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Gym Equipment</h1>
+    <p>Check out our top-quality equipment to boost your fitness journey!</p>
+  </header>
+
+  <section class="equipment-list">
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/Dumbbell.jpg" alt="Dumbbells">
+      <h2>Dumbbells</h2>
+      <p>High-quality dumbbells for strength training.</p>
+      <a href="https://www.amazon.com/s?k=dumbbells" target="_blank">Buy on Amazon</a>
+    </div>
+    
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/Yoga mat.jpg" alt="Yoga Mat">
+      <h2>Yoga Mat</h2>
+      <p>Comfortable and durable mats for yoga and stretching.</p>
+      <a href="https://www.amazon.com/s?k=yoga+mat" target="_blank">Buy on Amazon</a>
+    </div>
+    
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/resistance band.jpg" alt="Resistance Bands">
+      <h2>Resistance Bands</h2>
+      <p>Versatile bands for strength and flexibility training.</p>
+      <a href="https://www.amazon.com/s?k=resistance+bands" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/treadmill.jpg" alt="Treadmill">
+      <h2>Treadmill</h2>
+      <p>Perfect for cardio workouts and endurance training.</p>
+      <a href="https://www.amazon.com/s?k=treadmill" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/kettlebells.jpg" alt="Kettlebells">
+      <h2>Kettlebells</h2>
+      <p>Durable kettlebells for dynamic strength workouts.</p>
+      <a href="https://www.amazon.com/s?k=kettlebells" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/pullupbar.jpg" alt="Pull-up Bar">
+      <h2>Pull-up Bar</h2>
+      <p>Portable pull-up bars for upper body strength.</p>
+      <a href="https://www.amazon.com/s?k=pull-up+bar" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/rowingmachine.jpg" alt="Rowing Machine">
+      <h2>Rowing Machine</h2>
+      <p>Full-body cardio equipment for home or gym use.</p>
+      <a href="https://www.amazon.com/s?k=rowing+machine" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/Stationarybike.jpg" alt="Stationary Bike">
+      <h2>Stationary Bike</h2>
+      <p>Effective cardio machine for home workouts.</p>
+      <a href="https://www.amazon.com/s?k=stationary+bike" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/foamroller.jpg" alt="Foam Roller">
+      <h2>Foam Roller</h2>
+      <p>Relieve muscle soreness with these foam rollers.</p>
+      <a href="https://www.amazon.com/s?k=foam+roller" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/weightbench.jpg" alt="Weight Bench">
+      <h2>Weight Bench</h2>
+      <p>Perfect for weight lifting and bench presses.</p>
+      <a href="https://www.amazon.com/s?k=weight+bench" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/jumprope.jpg" alt="Jump Rope">
+      <h2>Jump Rope</h2>
+      <p>Compact and effective cardio workout tool.</p>
+      <a href="https://www.amazon.com/s?k=jump+rope" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/punchingbag.jpg" alt="Punching Bag">
+      <h2>Punching Bag</h2>
+      <p>Build strength and stamina with a punching bag.</p>
+      <a href="https://www.amazon.com/s?k=punching+bag" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/medicineball.jpg" alt="Medicine Ball">
+      <h2>Medicine Ball</h2>
+      <p>Great for dynamic strength and power training.</p>
+      <a href="https://www.amazon.com/s?k=medicine+ball" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/Spinbike.jpg" alt="Spin Bike">
+      <h2>Spin Bike</h2>
+      <p>Advanced cardio equipment for high-intensity cycling.</p>
+      <a href="https://www.amazon.com/s?k=spin+bike" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="equipment">
+      <img src="Assets/iloveimg-converted/Battleropes.jpg" alt="Battle Ropes">
+      <h2>Battle Ropes</h2>
+      <p>Heavy-duty ropes for intense full-body workouts.</p>
+      <a href="https://www.amazon.com/s?k=battle+ropes" target="_blank">Buy on Amazon</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; Royal Fitness 2024 All rights reserved.</p>
+  </footer>
+</body>
+</html>
