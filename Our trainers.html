@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Scheduler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #eaeaea;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #00ff00;
+        }
+
+        .scheduler-container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .trainer-select, .time-select, .schedule-btn {
+            margin: 10px;
+            font-size: 1.2rem;
+            padding: 10px;
+            background-color: #00ff00;
+            color: #1c1c1c;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trainer-select:hover, .time-select:hover, .schedule-btn:hover {
+            background-color: #33ff33;
+            transform: scale(1.05);
+        }
+
+        .schedule-list {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .schedule-list li {
+            margin: 10px 0;
+        }
+
+        .booked {
+            background-color: #33ff33;
+            color: #1c1c1c;
+        }
+
+        .trainer-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+            display: inline-block;
+            width: 300px;
+            color: #eaeaea;
+        }
+
+        .trainer-card h3 {
+            color: #00ff00;
+        }
+
+        .trainer-card p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Workout Scheduler</h1>
+
+    <div class="scheduler-container">
+        <!-- Trainer Selection -->
+        <label for="trainer" class="trainer-select">Choose Trainer:</label>
+        <select id="trainer" class="trainer-select">
+            <option value="john">John Doe (Strength & Conditioning)</option>
+            <option value="jane">Jane Smith (Cardio & Endurance)</option>
+            <option value="mike">Mike Johnson (Weight Loss & HIIT)</option>
+            <option value="emma">Emma Williams (Pilates & Flexibility)</option>
+            <option value="chris">Chris Brown (Boxing & Kickboxing)</option>
+            <option value="olivia">Olivia Taylor (Yoga & Wellness)</option>
+        </select>
+
+        <!-- Time Selection -->
+        <label for="time" class="time-select">Choose Time:</label>
+        <input type="time" id="time" class="time-select">
+
+        <!-- Book Schedule Button -->
+        <button class="schedule-btn" onclick="scheduleWorkout()">Schedule Workout</button>
+
+        <!-- Scheduled Workouts List -->
+        <ul id="schedule-list" class="schedule-list"></ul>
+    </div>
+
+    <div class="trainer-list">
+        <h2>Available Trainers</h2>
+
+        <!-- Trainer Cards -->
+        <div class="trainer-card">
+            <h3>John Doe</h3>
+            <p>Specialty: Strength & Conditioning</p>
+            <p>Available: 6:00 AM - 8:00 AM</p>
+        </div>
+
+        <div class="trainer-card">
+            <h3>Jane Smith</h3>
+            <p>Specialty: Cardio & Endurance</p>
+            <p>Available: 9:00 AM - 11:00 AM</p>
+        </div>
+
+        <div class="trainer-card">
+            <h3>Mike Johnson</h3>
+            <p>Specialty: Weight Loss & HIIT</p>
+            <p>Available: 5:00 PM - 7:00 PM</p>
+        </div>
+
+        <div class="trainer-card">
+            <h3>Emma Williams</h3>
+            <p>Specialty: Pilates & Flexibility</p>
+            <p>Available: 7:00 AM - 9:00 AM</p>
+        </div>
+
+        <div class="trainer-card">
+            <h3>Chris Brown</h3>
+            <p>Specialty: Boxing & Kickboxing</p>
+            <p>Available: 3:00 PM - 5:00 PM</p>
+        </div>
+
+        <div class="trainer-card">
+            <h3>Olivia Taylor</h3>
+            <p>Specialty: Yoga & Wellness</p>
+            <p>Available: 8:00 PM - 10:00 PM</p>
+        </div>
+    </div>
+
+    <script>
+        let schedule = [];
+
+        function scheduleWorkout() {
+            const trainer = document.getElementById("trainer").value;
+            const time = document.getElementById("time").value;
+
+            if (!trainer || !time) {
+                alert("Please select both a trainer and a time!");
+                return;
+            }
+
+            const trainerName = document.getElementById("trainer").options[document.getElementById("trainer").selectedIndex].text;
+            const scheduledWorkout = `${trainerName} at ${time}`;
+
+            // Check if time slot is already booked
+            if (schedule.includes(scheduledWorkout)) {
+                alert("This time slot is already booked!");
+                return;
+            }
+
+            // Add to schedule
+            schedule.push(scheduledWorkout);
+
+            // Display scheduled workouts
+            const scheduleList = document.getElementById("schedule-list");
+            const listItem = document.createElement("li");
+            listItem.textContent = scheduledWorkout;
+            scheduleList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
