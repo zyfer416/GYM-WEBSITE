@@ -1,190 +1,154 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
-    <title>Login | Royal Fitness</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #333333, #4a4a4a);
-            color: #006d22;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Login Form</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background: url('Assets/iloveimg-converted/Gymloginpage.jpg') no-repeat center center/cover; /* Replace with your background image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        .login-container {
-            background: #222;
-            border-radius: 12px;
-            padding: 30px;
-            width: 350px;
-            box-shadow: 0 4px 15px rgba(0, 253, 101, 0.3);
-            text-align: center;
-            height: 300px;
-        }
+    /* Container Styles */
+    .login-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      position: relative;
+      border: 2px solid #00ff99; /* Green border */
+    }
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #00fc47;
-        }
+    .login-container h1 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #00ff99;
+    }
 
-        .login-container form {
-            display: flex;
-            flex-direction: column;
-        }
+    /* Form Styles */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+      margin-bottom: 15px;
+    }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 8px;
-            background: #333;
-            color: #fff;
-        }
+    label {
+      font-size: 0.9em;
+      margin-bottom: 5px;
+      display: block;
+      color: #fff;
+    }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #33fd01;
-        }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1em;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
 
-        .btn {
-            padding: 10px;
-            background: #157400;
-            color: #000000;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border: 1px solid #00ff99;
+      transition: border-color 0.3s ease;
+    }
 
-        .btn:hover {
-            background: #00ff1a;
-        }
+    .checkbox-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8em;
+    }
 
-        .social-login a {
-            color: #fff;
-            font-size: 20px;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-        .social-login a:hover {
-            color: #ff6f61;
-        }
-    </style>
+    .btn-login {
+      background: #00ff99;
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn-login:hover {
+      transform: scale(1.05);
+      background: #00cc7a;
+      transition: all 0.3s ease;
+    }
+
+    /* Footer Text */
+    .footer-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8em;
+      color: #ccc;
+    }
+
+    .footer-text a {
+      color: #00ff99;
+      text-decoration: none;
+    }
+
+    .footer-text a:hover {
+      text-decoration: underline;
+      transition: 0.3s ease;
+    }
+    .login-container a{
+      color: white;
+    }
+    .login-container a:hover{
+      color: #00ff99;
+    }
+
+  </style>
 </head>
-
 <body>
-    <div class="login-container">
-        <h2>Login to Royal Fitness</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <input type="text" id="username" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn">Login</button>
-        </form>
-        <h3><p>Or connect with</p></h3>
-        <div class="social-login">
-            <a href="https://www.facebook.com/login/"><i class='bx bxl-facebook'></i></a>
-            <a href="https://myaccount.google.com/"><i class='bx bxl-google'></i></a>
-            <a href="https://www.linkedin.com/login"><i class='bx bxl-linkedin'></i></a>
-        </div>
-    </div>
-
-    <script>
-        // Login Form Submission
-        document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Simple check for demonstration (replace with actual validation logic)
-            if (username === "user@gmail.com" && password === "password") {
-                alert("Login Successful!");
-                window.location.href = "index.html"; // Redirect to the main site
-            } else {
-                alert("Invalid credentials. Please try again.");
-            }
-        });
-    </script>
-</body>
-
-</html> -->
-
-
-
-<!doctype html>
-
-<html lang="en"> 
-
- <head> 
-
-  <meta charset="UTF-8"> 
-
-  <title>Contact-Us</title> 
-
-  <link rel="stylesheet" href="login.css"> 
-
- </head> 
-
- <body>
-
-  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
-
-   <div class="signin"> 
-
-    <div class="content"> 
-
-     <h2>Login Page</h2> 
-
-     <div class="form"> 
-
-      <div class="inputBox"> 
-
-       <input type="text" required> <i>Name</i> 
-
-      </div> 
-
-      <div class="inputBox"> 
-
-       <input type="email" required> <i>Email</i> 
-
+  <div class="login-container">
+    <h1>Fitness Login Form</h1>
+    <form class="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
       </div>
-      
-      <div class="inputBox"> 
-
-        <input type="text" required> <i>Password</i> 
- 
-       </div> 
-
-      <div class="inputBox"> 
-
-      <a href="index.html">Login</a>  
-        
-      </div> 
-      
-     </div> 
-
-    </div> 
-
-   </div> 
-
-  </section> 
-
- </body>
-
-</html>\
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+      </div>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" name="remember"> Stay Signed In
+        </label>
+        <a href="#" style="color: #00ff99;">Forgot Password?</a>
+      </div>
+      <a href="index.html">Login</a>
+    </form>
+    <p class="footer-text">© 2024 Fitness Login Form. All rights reserved. <a href="#">Privacy Policy</a></p>
+  </div>
+</body>
+</html>
