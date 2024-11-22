@@ -8,7 +8,7 @@
 .yoga-teacher .heading {
     font-size: 5rem;
     margin-bottom: 40px;
-    color: #fffefe;
+    color: #ffffff;
 }
 
 .yoga-teacher p {
@@ -27,13 +27,14 @@
 }
 
 .teacher-card {
-    background: #fff;
+    background: #4a4a4a;
     border-radius: 10px;
     padding: 20px;
     max-width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 255, 0, 0.308);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.308);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .teacher-card:hover {
@@ -50,12 +51,12 @@
 .teacher-card h3 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #222;
+    color: #6eff13;
 }
 
 .teacher-card p {
     font-size: 1.5rem;
-    color: #555;
+    color: #ffffff;
 }
 
 header {
@@ -67,8 +68,8 @@ header {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
+    font-size: 2rem;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 20px;
     transition: background 0.3s ease;
@@ -107,12 +108,12 @@ header {
     top: 10px;
     right: 15px;
     font-size: 1.5rem;
-    color: #333;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .close-btn:hover {
-    color: #f00;
+    color: #f00; 
 }
 
 .modal h2{

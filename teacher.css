@@ -1,0 +1,58 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Teacher Container */
+.teacher-container {
+    max-width: 800px;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Teacher Name */
+.teacher-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00ff33;
+    margin-bottom: 20px;
+}
+
+/* Teacher Image */
+.teacher-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(17, 243, 62, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Teacher Bio */
+.teacher-bio {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .teacher-name {
+        font-size: 2.5rem;
+    }
+
+    .teacher-bio {
+        font-size: 1rem;
+    }
+}
