@@ -27,13 +27,12 @@
     </header>
 
     <!-- Main Content -->
-    <section class="yoga-teacher">
+    <section class="yoga-teacher fade-in">
         <div class="content">
             <h2 class="heading">Meet Our <span>Yoga Teachers</span></h2>
             <p>Our expert yoga teachers are dedicated to guiding you on your journey to physical and mental well-being. With years of experience and certifications in various yoga styles, they ensure every session is safe, enjoyable, and transformative.</p>
         </div>
-
-        <div class="teacher-list">
+        <div class="teacher-list fade-in">
             <!-- Teacher 1 -->
             <div class="teacher-card">
                 <a href="teacher1.html" class="teacher-box">
@@ -42,6 +41,7 @@
                 <h3>Sadhushri</h3>
                 <p>Specializes in Hatha Yoga and meditation techniques to help you find inner peace.</p>
                 <button class="join-now-btn" data-teacher="Sadhushri">Join Now</button>
+            </a>
             </div>
 
             <!-- Teacher 2 -->
@@ -51,6 +51,7 @@
                 <h3>Yogi Ankit Ji</h3>
                 <p>Certified in Vinyasa Flow Yoga, creating dynamic and engaging sequences for all levels.</p>
                 <button class="join-now-btn" data-teacher="Yogi Ankit Ji">Join Now</button>
+            </a>
             </div>
 
             <!-- Teacher 3 -->
@@ -60,10 +61,11 @@
                 <h3>Sankey Kumar Sharma</h3>
                 <p>Focused on therapeutic yoga for stress relief and flexibility improvement.</p>
                 <button class="join-now-btn" data-teacher="Sankey Kumar Sharma">Join Now</button>
+                </a>
             </div>
         </div>
     </section>
-
+    
     <!-- Modal -->
     <div id="confirmation-modal" class="modal">
         <div class="modal-content">
@@ -88,39 +90,54 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const joinNowButtons = document.querySelectorAll('.join-now-btn');
-            const modal = document.getElementById('confirmation-modal');
-            const closeModal = document.getElementById('close-modal');
-            const teacherName = document.getElementById('teacher-name');
-            const dateSpan = document.getElementById('date');
-            const timeSpan = document.getElementById('time');
+    
+<script>   
+    document.addEventListener('DOMContentLoaded', () => {
+        const joinNowButtons = document.querySelectorAll('.join-now-btn');
+        const modal = document.getElementById('confirmation-modal');
+        const closeModal = document.getElementById('close-modal');
+        const teacherName = document.getElementById('teacher-name');
+        const dateSpan = document.getElementById('date');
+        const timeSpan = document.getElementById('time');
 
-            // Open Modal on Button Click
-            joinNowButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const teacher = button.getAttribute('data-teacher');
-                    const now = new Date();
-                    teacherName.textContent = teacher; // Set the teacher's name in modal
-                    dateSpan.textContent = now.toDateString(); // Set current date
-                    timeSpan.textContent = now.toLocaleTimeString(); // Set current time
-                    modal.style.display = 'flex';
-                });
-            });
-
-            // Close Modal
-            closeModal.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            // Close Modal on Outside Click
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
+        // Open Modal on Button Click
+        joinNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const teacher = button.getAttribute('data-teacher');
+                const now = new Date();
+                teacherName.textContent = teacher; // Set the teacher's name in modal
+                dateSpan.textContent = now.toDateString(); // Set current date
+                timeSpan.textContent = now.toLocaleTimeString(); // Set current time
+                modal.style.display = 'flex';
             });
         });
-    </script>
+
+        // Close Modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close Modal on Outside Click
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // Fade-In Animation Code (Insert Below)
+    window.addEventListener("load", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.style.opacity = 1;
+                el.style.transform = "translateY(0)";
+            }, index * 200); // Stagger animation by 200ms
+        });
+    });
+</script>
+
+<script src="yoga_teacher.js"></script>
+   
 </body>
 </html>
