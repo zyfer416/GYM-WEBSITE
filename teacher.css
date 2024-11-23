@@ -41,8 +41,10 @@ body {
 
 /* Teacher Bio */
 .teacher-bio {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    justify-content: left;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
     color: #ffffff;
 }
 
@@ -55,4 +57,24 @@ body {
     .teacher-bio {
         font-size: 1rem;
     }
+}
+.book-now-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    background: #39ff14; /* Neon green color */
+
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.book-now-btn:hover {
+    transform: scale(1.1); /* Slightly enlarges the button */
+    box-shadow: 0 0 20px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
 }
