@@ -68,6 +68,7 @@ header {
     color: white;
     border: none;
     padding: 10px 20px;
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 2rem;
     border-radius: 10px;
     cursor: pointer;
@@ -76,7 +77,8 @@ header {
 }
 
 .join-now-btn:hover {
-    background-color: #218838;
+    background-color: #006115;
+    color: #000000;
 }
 
 /* Modal Styles */
