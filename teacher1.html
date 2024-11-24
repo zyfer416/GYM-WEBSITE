@@ -9,10 +9,12 @@
 </head>
 
 <body>
+    <header class="fade-in"> <!-- Header fades in -->
     <div class="teacher-container">
         <!-- Teacher Name -->
         <h1 class="teacher-name">Sadhushri</h1>
         <!-- Teacher Image -->
+        <section class="teacher-profile fade-in"> <!-- Profile fades in -->
         <div class="teacher-image">
             <img src="assets/teacher1.jpg" alt="Yoga Teacher 1">
         </div>
@@ -23,9 +25,22 @@
                  <p>Worked with diverse groups, from beginners to advanced practitioners, helping them achieve physical and emotional well-being.</p>
                   <p>Specialized in therapeutic yoga for stress relief, chronic pain, and mental health improvement.</p>
         </div>
+        <div class="fade-in"> <!-- Book Now button fades in -->
     </div>
 <a href="https://gym-website-git-main-devashish-aswals-projects.vercel.app/booking_form.html" class="book-now-btn">Book Now →</a>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        
+        // Trigger fade-in for all elements with the fade-in class
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add("visible");
+            }, index * 300); // Stagger animation by 300ms
+        });
+    });
+</script>
 
 
 </body>

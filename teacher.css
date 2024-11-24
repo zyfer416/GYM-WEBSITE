@@ -59,15 +59,16 @@ body {
     }
 }
 .book-now-btn {
-    position: fixed;
+    position:sticky;
+    
     bottom: 20px;
-    right: 20px;
+    right: auto;
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
+    color: #5bff1a;
     text-decoration: none;
     padding: 15px 30px;
-    background: #39ff14; /* Neon green color */
+    background: #3a3a3a; /* Greyish color */
 
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -76,5 +77,19 @@ body {
 
 .book-now-btn:hover {
     transform: scale(1.1); /* Slightly enlarges the button */
+    background: #00ff33;
+    color:#000000;
     box-shadow: 0 0 20px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+/* Add a fade-in class */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: slide effect */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Add this class to trigger the fade-in effect */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
