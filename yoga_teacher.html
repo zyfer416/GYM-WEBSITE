@@ -66,16 +66,6 @@
         </div>
     </section>
     
-    <!-- Modal -->
-    <div id="confirmation-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-modal" class="close-btn">&times;</span>
-            <h2>Appointment Booked!</h2>
-            <p>Your yoga session with <strong id="teacher-name"></strong> has been scheduled. Thank you for joining us!</p>
-            <p><strong>Date:</strong> <span id="date"></span></p>
-            <p><strong>Time:</strong> <span id="time"></span></p>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -88,54 +78,6 @@
             &copy; Royal Fitness 2024 - All Rights Reserved
         </p>
     </footer>
-
-    <!-- JavaScript -->
-    
-<script>   
-    document.addEventListener('DOMContentLoaded', () => {
-        const joinNowButtons = document.querySelectorAll('.join-now-btn');
-        const modal = document.getElementById('confirmation-modal');
-        const closeModal = document.getElementById('close-modal');
-        const teacherName = document.getElementById('teacher-name');
-        const dateSpan = document.getElementById('date');
-        const timeSpan = document.getElementById('time');
-
-        // Open Modal on Button Click
-        joinNowButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const teacher = button.getAttribute('data-teacher');
-                const now = new Date();
-                teacherName.textContent = teacher; // Set the teacher's name in modal
-                dateSpan.textContent = now.toDateString(); // Set current date
-                timeSpan.textContent = now.toLocaleTimeString(); // Set current time
-                modal.style.display = 'flex';
-            });
-        });
-
-        // Close Modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Close Modal on Outside Click
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
-
-    // Fade-In Animation Code (Insert Below)
-    window.addEventListener("load", () => {
-        const elements = document.querySelectorAll(".fade-in");
-        elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.style.opacity = 1;
-                el.style.transform = "translateY(0)";
-            }, index * 200); // Stagger animation by 200ms
-        });
-    });
-</script>
 
 <script src="yoga_teacher.js"></script>
    
