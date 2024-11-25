@@ -1,0 +1,128 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #22ff00;
+    text-decoration: none;
+}
+
+header .navbar {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header .navbar li {
+    display: inline;
+}
+
+header .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+header .navbar .active {
+    color: #00ff88;
+    border-bottom: 2px solid #00ff88;
+}
+
+/* Supplement Section */
+.supplement-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.supplement-section .heading {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.supplement-section .heading span {
+    color: #32ff1b;
+}
+
+.supplement-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.supplement-card {
+    background: #565555;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #65ff23;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.supplement-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.supplement-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.supplement-card .buy-now-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #2fff21;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.supplement-card .buy-now-btn:hover {
+    background: #008855;
+}
+
+/* Pop-In Animation */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
