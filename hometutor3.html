@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Sohail</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+
+<body>
+    <header class="fade-in"> <!-- Header fades in -->
+    <div class="teacher-container">
+        <!-- Teacher Name -->
+        <h1 class="teacher-name">Amir Sohail</h1>
+        <!-- Teacher Image -->
+        <section class="teacher-profile fade-in"> <!-- Profile fades in -->
+        <div class="teacher-image">
+            <img src="Assets/hometutor3.jpg" alt="Home Tutor 2">
+        </div>
+        <!-- Teacher Bio -->
+        <div class="teacher-bio">
+            <p> Fitness Trainer having  having an experience of over 4 years working with clients for different fitness and health goals.
+                <p>Skill of  gym trainer with expertise in weight training, functional fitness, and personalized workout programming</p>
+                 <p>Corrective Exercise Specialist, a Master Trainer, an American and European Certified Personal Fitness Trainer and a nutrition educator</p>
+                
+        </div>
+        <div class="fade-in"> <!-- Book Now button fades in -->
+    </div>
+<a href="https://gym-website-git-main-devashish-aswals-projects.vercel.app/booking_form.html" class="book-now-btn">Book Now →</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        
+        // Trigger fade-in for all elements with the fade-in class
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add("visible");
+            }, index * 300); // Stagger animation by 300ms
+        });
+    });
+</script>
+
+
+</body>
+
+</html>

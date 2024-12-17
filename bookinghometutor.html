@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="booking_form.css">
+</head>
+<body>
+    <header>
+        <h1>Book Your Yoga Session</h1>
+    </header>
+    <main>
+        <form action="https://formsubmit.co/eb28f13801d4329bf67804257d8452c2" method="POST" class="booking-form">
+            <!-- Hidden Inputs for FormSubmit -->
+            <input type="hidden" name="_subject" value="New Yoga Booking">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+            <!-- Phone -->
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your contact number">
+
+            <!-- Teacher -->
+            <label for="teacher">Yoga Teacher:</label>
+            <select id="teacher" name="teacher">
+                <option value="Shashank Shukla">Shashank Shukla</option>
+                <option value="Shahnawaz Malek">Shahnawaz Malek</option>
+                <option value="Amir Sohail">Amir Sohail</option>
+            </select>
+
+            <!-- Date -->
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <!-- Time -->
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn">Book Now</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Royal Fitness</p>
+    </footer>
+</body>
+</html>

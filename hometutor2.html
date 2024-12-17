@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahnawaz Malek</title>
+    <link rel="stylesheet" href="teacher.css">
+</head>
+
+<body>
+    <header class="fade-in"> <!-- Header fades in -->
+    <div class="teacher-container">
+        <!-- Teacher Name -->
+        <h1 class="teacher-name">Shahnawaz Malek</h1>
+        <!-- Teacher Image -->
+        <section class="teacher-profile fade-in"> <!-- Profile fades in -->
+        <div class="teacher-image">
+            <img src="Assets/hometutor2.jpg" alt="Home Tutor 2">
+        </div>
+        <!-- Teacher Bio -->
+        <div class="teacher-bio">
+            <p> Fitness Trainer having 6 years of experience in Fitness industry or 1 year Nutritionist.
+                <p> Skills are like Fat loss, Muscle Gain & What to eat, what to do in your daily lifestyle</p>
+                 <p> Motivation for personality development, Yoga Meditation, Acting Skills, Modelling Skills</p>
+                
+        </div>
+        <div class="fade-in"> <!-- Book Now button fades in -->
+    </div>
+<a href="https://gym-website-git-main-devashish-aswals-projects.vercel.app/booking_form.html" class="book-now-btn">Book Now →</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".fade-in");
+        
+        // Trigger fade-in for all elements with the fade-in class
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add("visible");
+            }, index * 300); // Stagger animation by 300ms
+        });
+    });
+</script>
+
+
+</body>
+
+</html>
