@@ -48,7 +48,15 @@
     
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
+            <!-- <li><a href="#services">Services</a></li> -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services</a>
+                <div class="dropdown-content">
+                    <a href="#services">Service</a>
+                    <a href="disablility.html">Person with disablities</a>
+                    
+                </div>
+            </li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#plans">Pricing</a></li>
             <li><a href="#review">Review</a></li>
@@ -59,13 +67,23 @@
                     <a href="supplement.html">Supplements</a>
                     <a href="equipments.html">Equipments</a>
                     <a href="ayurvedic_medicine.html">Ayurvedic Medicine</a>
-            <li><a href="yoga_teacher.html">Yoga Teachers</a></li>
-            <li><a href="hometutor.html">Home Tutor</a></li>
+                </div>
+            </li>
+            <li class="dropdown teacher-dropdown">
+            <a href="#" class="dropbtn">Teachers</a>
+            <div class="dropdown-content">
+            <a href="yoga_teacher.html">Yoga Teachers</a>
+            <a href="hometutor.html">Home Tutor</a>
+        </div>
+    </li>
         </ul>
+        
     
         <div class="top-btn">
             <a href="login.html" class="nav-btn">Join Us</a>
         </div>
+ 
+        
     
         <label class="switch">
             <input type="checkbox" id="theme-toggle">
@@ -82,6 +100,7 @@
         <p>Transform your body, elevate your confidence, and achieve the best version of yourself. Whether you're looking to gain muscle, shed fat, building your dream physique is no longer a dream — it's a reality waiting for you. Start today and feel the difference tomorrow!.</p>
 
         <a href="login.html" class="btn">Join Us</a>
+        
     </div>
 
     <div class="home-img" data-aos="zoom-in">
@@ -279,6 +298,7 @@
         <p class="copyright">
             &copy; Royal Fitness 2024 - All Rights Reserved
         </p>
+        
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -293,6 +313,59 @@
     <script src="script.js"></script>
     <script src="app.js"></script>
     <script src="dropdown.js"></script>
+
+    <!-- Text-to-Speech Button -->
+<button id="speech-toggle" style="
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #28a745;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 1.5rem;
+cursor: pointer;
+z-index: 999;
+">Enable Audio</button>
+
+<script>
+// Text-to-Speech Functionality
+const synth = window.speechSynthesis; // Web Speech API
+let speechEnabled = false; // Toggle for speech functionality
+
+// Function to speak the text content of the entire page
+function speakPageContent() {
+    const allText = document.body.innerText; // Get all the visible text
+    const utterance = new SpeechSynthesisUtterance(allText);
+    utterance.rate = 1; // Set the speed of the speech (1 is normal)
+    utterance.pitch = 1; // Pitch of voice
+    utterance.lang = 'en-US'; // Language
+
+    // Stop any ongoing speech
+    synth.cancel();
+
+    // Speak the content
+    synth.speak(utterance);
+}
+
+// Toggle button for Text-to-Speech
+const speechButton = document.getElementById('speech-toggle');
+speechButton.addEventListener('click', () => {
+    if (!speechEnabled) {
+        speakPageContent();
+        speechEnabled = true;
+        speechButton.innerText = "Disable Audio";
+        speechButton.style.backgroundColor = "#dc3545"; // Change button color
+    } else {
+        synth.cancel();
+        speechEnabled = false;
+        speechButton.innerText = "Enable Audio";
+        speechButton.style.backgroundColor = "#28a745"; // Reset button color
+    }
+});
+</script>
+
 
 </body>
 
