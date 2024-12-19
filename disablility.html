@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Gym Suggestions</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #6cff28; /* Neon green heading */
+            text-shadow: 0 0 10px #6cff28;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #c0c0c0; /* Light gray */
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #262626;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(108, 255, 40, 0.3);
+        }
+
+        label {
+            font-size: 1.6rem;
+            color: #6cff28;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background: #000;
+            color: #fff;
+            border: 2px solid #6cff28;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: #28a745;
+            color: #000000;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #6cff28;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #6cff28;
+            transform: scale(1.05);
+            color: #000;
+        }
+
+        /* Suggestions Section */
+        #suggestions {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #333;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(108, 255, 40, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        #suggestions.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2, h3 {
+            color: #6cff28;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            text-align: left;
+            padding: 10px 20px;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        button:hover {
+            animation: pulse 0.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>For person with Disablity</h1>
+        <p>Select your condition to discover personalized exercises and equipment.</p>
+    </header>
+
+    <main>
+        <!-- Form Section -->
+        <form id="accessibility-form">
+            <label for="condition">Select Your Condition:</label>
+            <select id="condition" name="condition" required>
+                <option value="" disabled selected>-- Choose an Option --</option>
+                <option value="mobility">Mobility Impairment</option>
+                <option value="visual">Visual Impairment</option>
+                <option value="hearing">Hearing Impairment</option>
+                <option value="rehabilitation">Injury Rehabilitation</option>
+                <option value="senior">Senior-Friendly Exercises</option>
+                <option value="weightloss">Weight Loss Programs</option>
+                <option value="athletic">Athlete Conditioning</option>
+                <option value="postpartum">Postpartum Recovery</option>
+                <option value="chronicpain">Chronic Pain Relief</option>
+                <option value="cardiohealth">Cardiovascular Health</option>
+            </select>
+
+            <button type="button" id="get-suggestions">Get Suggestions</button>
+        </form>
+
+        <!-- Suggestions Section -->
+        <section id="suggestions" aria-live="polite">
+            <!-- Suggestions will load here -->
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('get-suggestions').addEventListener('click', function () {
+            const condition = document.getElementById('condition').value;
+            const suggestions = document.getElementById('suggestions');
+
+            // Reset the suggestions section
+            suggestions.innerHTML = '';
+            suggestions.classList.remove('active');
+
+            const recommendations = {
+                mobility: {
+                    title: "Mobility Impairment",
+                    equipment: ['Handcycle', 'Resistance Bands', 'Seated Row Machine'],
+                    exercises: ['Seated Dumbbell Press', 'Resistance Band Pull-Apart']
+                },
+                visual: {
+                    title: "Visual Impairment",
+                    equipment: ['Treadmill with tactile buttons', 'Rowing Machine', 'Audible Equipment'],
+                    exercises: ['Guided Yoga', 'Bodyweight Squats']
+                },
+                hearing: {
+                    title: "Hearing Impairment",
+                    equipment: ['Elliptical Machines', 'Vibration Plates'],
+                    exercises: ['HIIT Workouts', 'Strength Training']
+                },
+                rehabilitation: {
+                    title: "Injury Rehabilitation",
+                    equipment: ['Foam Rollers', 'Resistance Bands'],
+                    exercises: ['Mobility Drills', 'Low-Impact Cardio']
+                },
+                senior: {
+                    title: "Senior-Friendly Exercises",
+                    equipment: ['Recumbent Bike', 'Balance Balls'],
+                    exercises: ['Chair Yoga', 'Light Aerobics']
+                },
+                weightloss: {
+                    title: "Weight Loss Programs",
+                    equipment: ['Treadmill', 'Elliptical Trainer'],
+                    exercises: ['Cardio HIIT', 'Strength Training']
+                },
+                athletic: {
+                    title: "Athlete Conditioning",
+                    equipment: ['Barbells', 'Plyometric Boxes'],
+                    exercises: ['Agility Drills', 'Olympic Lifts']
+                },
+                postpartum: {
+                    title: "Postpartum Recovery",
+                    equipment: ['Yoga Mat', 'Resistance Bands'],
+                    exercises: ['Pelvic Floor Exercises', 'Gentle Core Workouts']
+                },
+                chronicpain: {
+                    title: "Chronic Pain Relief",
+                    equipment: ['Foam Rollers', 'Low-Impact Ellipticals'],
+                    exercises: ['Gentle Stretching', 'Hydrotherapy']
+                },
+                cardiohealth: {
+                    title: "Cardiovascular Health",
+                    equipment: ['Rowing Machine', 'Spin Bike'],
+                    exercises: ['Steady-State Cardio', 'Interval Training']
+                }
+            };
+
+            if (recommendations[condition]) {
+                const rec = recommendations[condition];
+                suggestions.innerHTML = `
+                    <h2>${rec.title}</h2>
+                    <h3>Recommended Equipment:</h3>
+                    <ul>${rec.equipment.map(item => `<li>${item}</li>`).join('')}</ul>
+                    <h3>Recommended Exercises:</h3>
+                    <ul>${rec.exercises.map(item => `<li>${item}</li>`).join('')}</ul>
+                `;
+                suggestions.classList.add('active');
+            } else {
+                suggestions.innerHTML = "<p>Please select a valid condition.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

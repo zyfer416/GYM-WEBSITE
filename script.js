@@ -166,3 +166,35 @@ document.querySelector(".close").addEventListener("click", () => {
   chatbotBox.classList.remove('show');
     btn.classList.remove('hide');
 });
+
+
+
+// Select all dropdown elements
+const dropdowns = document.querySelectorAll('.dropdown');
+
+// Add click event listeners to each dropdown
+dropdowns.forEach(dropdown => {
+    const dropbtn = dropdown.querySelector('.dropbtn');
+
+    dropbtn.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        event.stopPropagation(); // Prevent event from bubbling up
+
+        // Toggle the 'active' class for the clicked dropdown
+        dropdown.classList.toggle('active');
+
+        // Close other dropdowns
+        dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function () {
+    dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+    });
+});
